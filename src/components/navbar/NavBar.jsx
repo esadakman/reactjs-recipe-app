@@ -12,13 +12,12 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import Mando from "../assets/mando.png";
-import { NavLink, useNavigate, Link } from "react-router-dom";
+import Mando from "../../assets/mando.png";
+import { NavLink, Link } from "react-router-dom";
+// import NavStyle from "./Navbar.styled";
 const pages = ["Home", "About", "Contact"];
 
 const NavBar = () => {
-  const navigate = useNavigate();
-
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -49,7 +48,7 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            LOGOS
+            {`<esad/>`}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -85,7 +84,12 @@ const NavBar = () => {
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
                     <NavLink
-                      style={{ textDecoration: "none", color: "white" }}
+                      style={({ isActive }) => ({
+                        color: isActive ? "white" : "black",
+                        background: isActive ? "#52565c" : "none",
+
+                        textDecoration: "none",
+                      })}
                       to={`/${page}`}
                     >
                       {page}
@@ -122,8 +126,12 @@ const NavBar = () => {
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 <NavLink
-                  style={{ textDecoration: "none", color: "white" }}
                   to={`/${page}`}
+                  style={({ isActive }) => ({
+                    color: isActive ? "white " : "#d8dfe979",
+                    // background: isActive ? "#52565c79" : "none",
+                    textDecoration: "none",
+                  })}
                 >
                   {page}
                 </NavLink>
@@ -132,8 +140,12 @@ const NavBar = () => {
           </Box>
 
           {/* <Box sx={{ flexGrow: 0 }}> */}
-          <Tooltip title="Open settings">
-            <IconButton onClick={() => navigate("/")} sx={{ p: 0 }}>
+          <Tooltip title="My Github">
+            <IconButton
+              component="a"
+              href="https://github.com/esadakman"
+              sx={{ p: 0 }}
+            >
               <Avatar alt="Mandalorian" src={Mando} />
             </IconButton>
           </Tooltip>
