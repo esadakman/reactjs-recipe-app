@@ -35,6 +35,7 @@ sx={{
                 >
 <MenuIcon />
 </IconButton>
+
 <Menu
 id="menu-appbar"
 anchorEl={anchorElNav}
@@ -231,6 +232,7 @@ sx={{
             >
 <MenuIcon />
 </IconButton>
+
 <Menu
 id="menu-appbar"
 anchorEl={anchorElNav}
@@ -353,3 +355,11 @@ sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
         </Toolbar>
       </Container>
     </AppBar>
+
+<!-- ???????????????????????????? -->
+
+<Route path="/login" element={<Login />} />
+<Route path="/home" element={<Home />} />
+<Route path="/about" element={<About />} />
+<Route path="/contact" element={<Details />} />
+<Route path="/\*" element={<NotFound />} />

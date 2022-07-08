@@ -14,9 +14,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
+  LoginStyled,
   FormContainer,
   Header,
-  LoginStyled,
   StyledButton,
   StyledForm,
   StyledImg,
