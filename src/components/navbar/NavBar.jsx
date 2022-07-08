@@ -11,28 +11,51 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import Mando from "../../assets/mando.png";
+import LocalDiningIcon from "@mui/icons-material/LocalDining";
 import { NavLink, Link } from "react-router-dom";
-// import NavStyle from "./Navbar.styled";
-const pages = ["Home", "About", "Contact"];
+import Mando from "../../assets/mando.png";
+import eat from "../../assets/eat.png";
+import NavStyle from "./Navbar.styled";
 
+const pages = ["Home", "About", "Contact"];
+// const settings = ["Home", "About", "Logout"];
 const NavBar = () => {
+  // const [isOpen, setIsOpen] = React.useState(
+  //   JSON.parse(sessionStorage.getItem("userInfo")) || false
+  // );
+
+  const handleOut = () => {
+    // setIsOpen(false);
+    sessionStorage.clear();
+  };
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
   return (
     <AppBar position="static" style={{ background: "#050f24" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <Avatar
+            alt="eat"
+            src={eat}
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+          />
           <Typography
             variant="h6"
             noWrap
@@ -50,7 +73,6 @@ const NavBar = () => {
           >
             {`<esad/>`}
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -85,12 +107,11 @@ const NavBar = () => {
                   <Typography textAlign="center">
                     <NavLink
                       style={({ isActive }) => ({
-                        color: isActive ? "white" : "black",
-                        background: isActive ? "#52565c" : "none",
-
+                        color: "black",
                         textDecoration: "none",
+                        fontWeight: isActive ? "bold" : "none",
                       })}
-                      to={`/${page}`}
+                      to={`/${page.toLocaleLowerCase()}`}
                     >
                       {page}
                     </NavLink>
@@ -99,7 +120,10 @@ const NavBar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <LocalDiningIcon
+            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+          />
+
           <Typography
             variant="h5"
             noWrap
@@ -116,8 +140,9 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            {`<esad/>`}
           </Typography>
+          {/* //! =========================================== */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -129,27 +154,57 @@ const NavBar = () => {
                   to={`/${page}`}
                   style={({ isActive }) => ({
                     color: isActive ? "white " : "#d8dfe979",
-                    // background: isActive ? "#52565c79" : "none",
                     textDecoration: "none",
                   })}
                 >
-                  {page}
+                  {page.toLocaleLowerCase()}
                 </NavLink>
               </Button>
             ))}
           </Box>
 
-          {/* <Box sx={{ flexGrow: 0 }}> */}
-          <Tooltip title="My Github">
-            <IconButton
-              component="a"
-              href="https://github.com/esadakman"
-              sx={{ p: 0 }}
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="My Github">
+              <IconButton
+                onClick={handleOpenUserMenu}
+                // component="a"
+                // href="https://github.com/esadakman"
+                // target="_blank"
+                sx={{ p: 0 }}
+              >
+                <Avatar alt="Mandalorian" src={Mando} />
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: "45px" }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
             >
-              <Avatar alt="Mandalorian" src={Mando} />
-            </IconButton>
-          </Tooltip>
-          {/* </Box> */}
+              {/* {settings.map((setting) => ( */}
+              <MenuItem onClick={handleCloseUserMenu}>
+                <Typography textAlign="center">
+                  <NavStyle>
+                    <NavLink to={`/home`}>Home</NavLink>
+                    <NavLink to={`/`} onClick={handleOut}>
+                      Logout
+                    </NavLink>
+                  </NavStyle>
+                </Typography>
+              </MenuItem>
+              {/* ))} */}
+            </Menu>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
