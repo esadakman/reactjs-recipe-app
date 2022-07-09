@@ -1,16 +1,9 @@
-// import styled from "styled-components";
-
-// const LoginStyled = styled.div`
-//   /* ... */
-// `;
-
-// export default LoginStyled;
-
 import styled from "styled-components";
 
 export const LoginStyled = styled.div`
-  background-image: linear-gradient(to right, #0098f795, #f116129e);
+  /* background-image: linear-gradient(to right, #0098f795, #f116129e); */
   height: 80vh;
+  background-image: url("https://picsum.photos/1600/900");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -30,11 +23,12 @@ export const FormContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   color: white;
-  background-color: #fffbfb1d;
+  background-color: #3d3a3a44;
   letter-spacing: 0.2rem;
   padding: 2rem;
   gap: 0.5rem;
-  width: 23rem;
+  width: 22rem;
+  /* height: 20rem; */
 `;
 
 export const Header = styled.h1`
@@ -51,12 +45,11 @@ export const StyledInput = styled.input`
   text-indent: 10px;
   outline: none;
   border: inherit;
-  transition: all 0.4s;
   ::placeholder {
     color: #ffffffa5;
   }
   &:focus {
-    transition: all 0.1s;
+    transition: all 0.5s;
     outline: none;
     border: 1px solid white;
     transform: scale(1.05);
@@ -80,7 +73,7 @@ export const StyledButton = styled.button`
 
   color: white;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+  transition: 0.7s ease-in-out;
 
   :hover {
     transform: scale(1.1);
@@ -92,6 +85,6 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledImg = styled.img`
-  width: 9rem;
+  width: 8rem;
   /* margin: 1rem; */
 `;

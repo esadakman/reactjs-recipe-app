@@ -1,16 +1,3 @@
-// import React from "react";
-// import LoginStyled from "./Login.styled";
-
-// const Login = () => {
-//   return (
-//     <LoginStyled>
-//       <h1>LOGIN</h1>
-//     </LoginStyled>
-//   );
-// };
-
-// export default Login;
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -37,7 +24,6 @@ const Login = () => {
     e.preventDefault();
     sessionStorage.setItem("userInfo", JSON.stringify(userInfo));
     Navigate("/home");
-    // window.location.href = "/home";
   };
   return (
     <LoginStyled>

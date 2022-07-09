@@ -18,11 +18,7 @@ const Footer = () => {
         >
           <TwitterIcon />
         </a>
-        <a
-          href="https://www.linkedin.com/in/esadakman/"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://github.com/esadakman" target="_blank" rel="noreferrer">
           <GitHubIcon />
         </a>
         <a
