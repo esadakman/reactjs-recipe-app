@@ -12,7 +12,7 @@ const NotFound = () => {
       <DivStyled>
         <img src={vincent} alt="" />
         <h1>404</h1>
-        <p>Something went wrong</p>
+        {/* <p>Something went wrong</p> */}
         <Button
           style={{ background: "#0d1e43" }}
           variant="contained"

@@ -193,14 +193,14 @@ const NavBar = () => {
             >
               {/* {settings.map((setting) => ( */}
               <MenuItem onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">
-                  <NavStyle>
-                    <NavLink to={`/home`}>Home</NavLink>
-                    <NavLink to={`/`} onClick={handleOut}>
-                      Logout
-                    </NavLink>
-                  </NavStyle>
-                </Typography>
+                {/* <Typography textAlign="center"> */}
+                <NavStyle>
+                  <NavLink to={`/home`}>Home</NavLink>
+                  <NavLink to={`/`} onClick={handleOut}>
+                    Logout
+                  </NavLink>
+                </NavStyle>
+                {/* </Typography> */}
               </MenuItem>
               {/* ))} */}
             </Menu>
