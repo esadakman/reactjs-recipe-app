@@ -1,4 +1,5 @@
 // import React, { useState } from "react";
+// import { useEffect } from "react";
 import {
   ButtonStyle,
   FormContainer,
@@ -11,10 +12,13 @@ import {
 const Header = ({ mealTypes, setQuery, setMeal, getRecipes, query }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
+    // localStorage.clear();
     getRecipes();
-    setQuery("");
-    setMeal("");
+    // setQuery("");
   };
+  // useEffect(() => {
+  //   localStorage.setItem("query", JSON.stringify(query));
+  // }, [query]);
   return (
     <Main>
       <H1>Food App</H1>
@@ -28,7 +32,6 @@ const Header = ({ mealTypes, setQuery, setMeal, getRecipes, query }) => {
         <ButtonStyle type="submit" value="Submit">
           Search
         </ButtonStyle>
-        {/* <label htmlFor="lang">Language</label> */}
         <Select
           name="mealTypes"
           id="mealTypes"

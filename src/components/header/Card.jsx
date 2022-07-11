@@ -7,21 +7,18 @@ import CardContainer, {
   CardInner,
   DescDiv,
   IMGContainer,
-  // Section,
   TextDiv,
 } from "./Card.styled";
 
 const Card = ({ recipe }) => {
   const [flipped, setFlipped] = useState(false);
   const navigate = useNavigate();
-  const handleMore = () => {
-    console.log(recipe);
-  };
+
   return (
     // <Section>
     <CardContainer
       onMouseEnter={() => setFlipped(true)}
-      // onMouseLeave={() => setFlipped(false)}
+      onMouseLeave={() => setFlipped(false)}
     >
       <CardInner className={flipped ? "flipped" : ""}>
         <CardFront>
@@ -41,13 +38,20 @@ const Card = ({ recipe }) => {
               Dish Type: <span>{recipe.dishType[0]}</span>
             </p>
             <p>
-              Meal Type: <span>{recipe.mealType[0]}</span>{" "}
+              Meal Type: <span>{recipe.mealType[0]}</span>
             </p>
             <p>
               Cuisine Type: <span>{recipe.cuisineType[0]}</span>
             </p>
           </DescDiv>
-          <ButtonStyleCard onClick={handleMore}>View More</ButtonStyleCard>
+          <ButtonStyleCard
+            onClick={
+              // () => navigate(`/details/${recipe.label}`, { state: recipe })
+              () => navigate(`/details`, { state: recipe })
+            }
+          >
+            View More
+          </ButtonStyleCard>
         </CardBack>
       </CardInner>
     </CardContainer>

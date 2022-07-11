@@ -14,7 +14,7 @@ import LocalDiningIcon from "@mui/icons-material/LocalDining";
 import { NavLink } from "react-router-dom";
 import Mando from "../../assets/mando.png";
 import eat from "../../assets/eat.png";
-import NavStyle, { HamburgerLink, LinkStyle } from "./Navbar.styled";
+import { HamburgerLink, LinkStyle } from "./Navbar.styled";
 import { Link } from "@mui/material";
 const NavBar = () => {
   // const [isOpen, setIsOpen] = React.useState(
@@ -24,6 +24,7 @@ const NavBar = () => {
   const handleOut = () => {
     // setIsOpen(false);
     sessionStorage.clear();
+    localStorage.clear();
   };
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -32,9 +33,9 @@ const NavBar = () => {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -61,8 +62,8 @@ const NavBar = () => {
           <Typography
             variant="h6"
             noWrap
-            component={Link}
-            to="/ "
+            component={NavLink}
+            to="/home"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -105,15 +106,13 @@ const NavBar = () => {
               }}
             >
               <MenuItem onClick={handleCloseNavMenu} sx={{ p: 0, m: 0 }}>
-                {/* <Typography textAlign="center"> */}
                 <HamburgerLink>
                   <NavLink
                     to={`/about`}
-                    style={({ isActive }) => ({
+                    style={{
                       color: "black",
                       textDecoration: "none",
-                      fontWeight: isActive ? "bold" : "none",
-                    })}
+                    }}
                   >
                     About
                   </NavLink>
@@ -124,17 +123,16 @@ const NavBar = () => {
                     github
                   </Link>
                   <NavLink
-                    to={`/home`}
-                    style={({ isActive }) => ({
+                    to={`/`}
+                    onClick={handleOut}
+                    style={{
                       color: "black",
                       textDecoration: "none",
-                      fontWeight: isActive ? "bold" : "none",
-                    })}
+                    }}
                   >
-                    home
+                    LogOut
                   </NavLink>
                 </HamburgerLink>
-                {/* </Typography> */}
               </MenuItem>
             </Menu>
           </Box>
@@ -145,8 +143,8 @@ const NavBar = () => {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href="/home"
+            component={NavLink}
+            to="/home"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -161,7 +159,12 @@ const NavBar = () => {
             {`<esad/>`}
           </Typography>
           {/* //! =========================================== */}
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+            }}
+          >
             <LinkStyle>
               <NavLink
                 to={`/about`}
@@ -179,13 +182,14 @@ const NavBar = () => {
                 github
               </Link>
               <NavLink
-                to={`/home`}
+                to={`/`}
+                onClick={handleOut}
                 style={({ isActive }) => ({
                   color: isActive ? "white " : "#d8dfe979",
                   textDecoration: "none",
                 })}
               >
-                home
+                LogOut
               </NavLink>
             </LinkStyle>
           </Box>
@@ -193,10 +197,7 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="My Github">
               <IconButton
-                onClick={handleOpenUserMenu}
-                // component="a"
-                // href="https://github.com/esadakman"
-                // target="_blank"
+                onClick={() => openInNewTab("https://github.com/esadakman")}
                 sx={{ p: 0 }}
               >
                 <Avatar alt="Mandalorian" src={Mando} />
@@ -217,18 +218,7 @@ const NavBar = () => {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
-            >
-              <MenuItem onClick={handleCloseUserMenu} sx={{ p: 0 }}>
-                {/* <Typography textAlign="center"> */}
-                <NavStyle>
-                  <NavLink to={`/home`}>Home</NavLink>
-                  <NavLink to={`/`} onClick={handleOut}>
-                    Logout
-                  </NavLink>
-                </NavStyle>
-              </MenuItem>
-              {/* ))} */}
-            </Menu>
+            ></Menu>
           </Box>
         </Toolbar>
       </Container>

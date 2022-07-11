@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
 
-export const Section = styled.section`
-  width: 20%;
-  height: 20rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
+// export const Section = styled.section`
+//   width: 20%;
+//   height: 20rem;
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+// `;
 
 const CardContainer = styled.div`
   margin: 1rem;
