@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const LoginStyled = styled.div`
   /* background-image: linear-gradient(to right, #0098f795, #f116129e); */
-  height: 80vh;
+  height: 85vh;
   background-image: url("https://picsum.photos/1600/900");
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,14 +16,14 @@ export const LoginStyled = styled.div`
 
 export const FormContainer = styled.div`
   transition: all 1s;
-  border: 2px solid white;
+  border: 2px solid ${({ theme }) => theme.colors.turqo};
   border-radius: 50%;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   color: white;
-  background-color: #3d3a3a44;
+  background-color: #3d3a3a8f;
   letter-spacing: 0.2rem;
   padding: 2rem;
   gap: 0.5rem;
@@ -68,19 +68,17 @@ export const StyledButton = styled.button`
   border: none;
   height: 2rem;
   width: auto;
-  background: #e53835;
-  opacity: 0.8;
-
+  background: ${({ theme }) => theme.colors.turqo};
+  font-weight: bold;
   color: white;
   cursor: pointer;
   transition: 0.7s ease-in-out;
+  outline: 2px solid ${({ theme }) => theme.colors.turqo};
 
   :hover {
     transform: scale(1.1);
-    opacity: 0.9;
-  }
-  :active {
-    opacity: 1;
+    color: ${({ theme }) => theme.colors.navColor};
+    outline: 2px solid ${({ theme }) => theme.colors.buttonBg};
   }
 `;
 

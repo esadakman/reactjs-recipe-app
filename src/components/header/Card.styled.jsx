@@ -9,7 +9,6 @@ export const Section = styled.section`
 `;
 
 const CardContainer = styled.div`
-  cursor: pointer;
   margin: 1rem;
   display: flex;
   flex-direction: column;
@@ -50,18 +49,13 @@ export const CardFront = styled.div`
   background-color: white;
   width: 100%;
   overflow: hidden;
-  /* padding: 0.8rem; */
-  /* & > h2 {
-    font-size: 1rem;
-    text-align: center;
-  }
-  */
+  background-color: ${({ theme }) => theme.colors.cardText};
 `;
 export const TextDiv = styled.div`
   border-radius: 1rem 1rem 0 0;
   height: 3rem;
   padding: 0.5rem;
-  background-color: #0a7373;
+  background-color: ${({ theme }) => theme.colors.cardBack};
   color: #eaf2f3;
   overflow: hidden;
   text-align: center;
@@ -79,7 +73,7 @@ export const IMGContainer = styled.div`
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
-    border: 1px solid blue;
+    border: 1px solid #090a3be9;
   }
 `;
 
@@ -87,7 +81,7 @@ export const CardBack = styled.div`
   ${CardSide};
   transform: rotateY(-180deg) translate(100%, 0);
   border-radius: 1rem;
-  background-color: #090a3be9;
+  background-color: ${({ theme }) => theme.colors.cardText};
   z-index: 1;
   width: 100%;
 `;
@@ -108,24 +102,23 @@ export const DescDiv = styled.div`
   width: 100%;
   max-height: 8rem;
   font-family: "Roboto", sans-serif;
-  color: white;
   padding: 1rem;
   gap: 0.5rem;
+  color: ${({ theme }) => theme.colors.navColor};
+  font-weight: 600;
   & > p {
-    /* white-space: pre-line; */
     text-transform: capitalize;
     & > span {
-      color: #80e2e9;
+      color: ${({ theme }) => theme.colors.cardBack};
     }
   }
 `;
 
 export const ButtonStyleCard = styled.button`
-  padding: 1rem;
-  background-color: #03bfcb;
-  border: 2px solid #090325;
+  background-color: ${({ theme }) => theme.colors.turqo};
+  border: 2px solid ${({ theme }) => theme.colors.navColor};
   border-radius: 0.7rem;
-  color: #050f24;
+  color: ${({ theme }) => theme.colors.navColor};
   text-decoration: none;
   padding: 5px 10px;
   font-weight: bold;
@@ -136,9 +129,9 @@ export const ButtonStyleCard = styled.button`
   margin: 1rem auto;
   :hover {
     opacity: 0.9;
-    color: #03bfcb;
-    background-color: #09032563;
-    border: 2px solid #03bfcb;
+    color: ${({ theme }) => theme.colors.turqo};
+    background-color: ${({ theme }) => theme.colors.navColor};
+    border: 2px solid ${({ theme }) => theme.colors.turqo};
   }
   :active {
     opacity: 1;

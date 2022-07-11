@@ -4,11 +4,11 @@ const FooterStyle = styled.footer`
   display: flex;
   text-decoration: none;
   justify-content: space-between;
-  background-color: #050f24;
+  background-color: ${({ theme }) => theme.colors.navColor};
   color: black;
   font-family: "Roboto", sans-serif;
   align-items: center;
-  height: 11vh;
+  height: 8vh;
   padding: 0 1rem;
   position: fixed;
   width: 100%;
@@ -23,6 +23,8 @@ export const Logos = styled.div`
     transition: all 0.3s linear;
     color: white;
     &:hover {
+      color: ${({ theme }) => theme.colors.turqo};
+
       transform: scale(1.2);
     }
   }
