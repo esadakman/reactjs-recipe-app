@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
 const FooterStyle = styled.footer`
-  background-color: #050f24;
   display: flex;
-  color: black;
   text-decoration: none;
   justify-content: space-between;
+  background-color: #050f24;
+  color: black;
+  font-family: "Roboto", sans-serif;
   align-items: center;
   height: 11vh;
-  font-family: "Roboto", sans-serif;
   padding: 0 1rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 `;
 
 export const Logos = styled.div`
