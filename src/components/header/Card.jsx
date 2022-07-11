@@ -1,27 +1,57 @@
-import { Button } from "@mui/material";
 import React, { useState } from "react";
-import CardContainer, { CardBack, CardFront, CardInner } from "./Card.styled";
+import { useNavigate } from "react-router-dom";
+import CardContainer, {
+  ButtonStyleCard,
+  CardBack,
+  CardFront,
+  CardInner,
+  DescDiv,
+  IMGContainer,
+  // Section,
+  TextDiv,
+} from "./Card.styled";
 
-const Card = () => {
+const Card = ({ recipe }) => {
   const [flipped, setFlipped] = useState(false);
-
+  const navigate = useNavigate();
+  const handleMore = () => {
+    console.log(recipe);
+  };
   return (
-    <div>
-      <CardContainer>
-        <CardInner className={flipped ? "flipped" : ""}>
-          <CardFront>
-            <h2>Front Side</h2>
-            <p>Content Front</p>
-            <Button onMouseEnter={() => setFlipped(true)}>Flip</Button>
-          </CardFront>
-          <CardBack>
-            <h2>BackSide</h2>
-            <p>Content Back</p>
-            <Button onMouseLeave={() => setFlipped(false)}>Flip</Button>
-          </CardBack>
-        </CardInner>
-      </CardContainer>
-    </div>
+    // <Section>
+    <CardContainer
+      onMouseEnter={() => setFlipped(true)}
+      // onMouseLeave={() => setFlipped(false)}
+    >
+      <CardInner className={flipped ? "flipped" : ""}>
+        <CardFront>
+          <TextDiv>
+            <h2 title={recipe.label}>{recipe.label}</h2>
+          </TextDiv>
+          <IMGContainer>
+            <img src={recipe.image} alt="food images" />
+          </IMGContainer>
+        </CardFront>
+        <CardBack>
+          <TextDiv>
+            <h2 title={recipe.label}>{recipe.label}</h2>
+          </TextDiv>
+          <DescDiv>
+            <p>
+              Dish Type: <span>{recipe.dishType[0]}</span>
+            </p>
+            <p>
+              Meal Type: <span>{recipe.mealType[0]}</span>{" "}
+            </p>
+            <p>
+              Cuisine Type: <span>{recipe.cuisineType[0]}</span>
+            </p>
+          </DescDiv>
+          <ButtonStyleCard onClick={handleMore}>View More</ButtonStyleCard>
+        </CardBack>
+      </CardInner>
+    </CardContainer>
+    // </Section>
   );
 };
 
