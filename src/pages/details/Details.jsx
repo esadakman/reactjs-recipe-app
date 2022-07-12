@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   CardDiv,
   DetailsContainer,
@@ -21,7 +21,8 @@ const Details = () => {
     ingredientLines,
     image,
   } = recipe.state;
-  console.log(ingredientLines);
+  // console.log(ingredientLines);
+  const navigate = useNavigate();
   return (
     <DetailsContainer>
       <LabelDiv>
@@ -98,7 +99,12 @@ const Details = () => {
           </div>
         </MealIngredients>
       </CardDiv>
-      <ButtonStyle style={{ marginBottom: "5rem" }}>Go Back</ButtonStyle>
+      <ButtonStyle
+        style={{ marginBottom: "5rem" }}
+        onClick={() => navigate(-1)}
+      >
+        Go Back
+      </ButtonStyle>
     </DetailsContainer>
   );
 };

@@ -10,6 +10,7 @@ import styled, { css } from "styled-components";
 
 const CardContainer = styled.div`
   margin: 1rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   transition: z-index 500ms, transform 500ms;

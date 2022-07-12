@@ -17,7 +17,7 @@ function App() {
       xs: "560px",
       sm: "640px",
       md: "768px",
-      mdl: "810px",
+      mdl: "820px",
       lg: "1024px",
     },
   };

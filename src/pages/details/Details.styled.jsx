@@ -15,7 +15,7 @@ export const LabelDiv = styled.div`
   justify-content: center;
   align-items: flex-start;
   gap: 1.5rem;
-  max-width: 90%;
+  /* max-width: 90%; */
   @media (max-width: ${({ theme }) => theme.size.mdl}) {
     flex-direction: column;
     align-items: center;
@@ -43,15 +43,20 @@ export const CardDiv = styled.div`
   align-items: center;
   border: 2px solid ${({ theme }) => theme.colors.navColor};
   border-radius: 1rem;
-  width: 90vw;
+  width: 80vw;
   gap: 1rem;
   margin: 1rem 0 2rem 0;
   padding: 1rem;
   background-color: #d4f1ff;
-  @media (max-width: ${({ theme }) => theme.size.mdl}) {
+  /* @media (max-width: ${({ theme }) => theme.size.lg}) {
     flex-direction: column;
-    width: fit-content;
+  } */
+  @media (max-width: ${({ theme }) => theme.size.mdl}) {
+    width: 70%;
     gap: 2rem;
+  }
+  @media (max-width: ${({ theme }) => theme.size.md}) {
+    /* width: 80%; */
   }
 `;
 
@@ -153,6 +158,6 @@ export const MealIngredients = styled.div`
   @media (max-width: ${({ theme }) => theme.size.mdl}) {
     /* justify-content: center; */
     /* width: 80%; */
-    width: 80%;
+    width: 70%;
   }
 `;
