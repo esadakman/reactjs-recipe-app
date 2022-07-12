@@ -22,6 +22,7 @@ const Details = () => {
   } = recipe.state;
   console.log(ingredientLines);
   return (
+    // {recipe?}
     <DetailsContainer>
       <LabelDiv>
         <AboutTitle>{label}</AboutTitle>

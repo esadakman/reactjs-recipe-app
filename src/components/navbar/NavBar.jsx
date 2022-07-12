@@ -49,7 +49,13 @@ const NavBar = () => {
     // 👇️ setting target to _blank with window.open
     window.open(url, "_blank", "noopener,noreferrer");
   };
+  // const userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
+  // React.useEffect(() => {
+  //   JSON.parse(sessionStorage.getItem("userInfo"));
+  // }, [userInfo]);
 
+  // return userInfo ? <Outlet /> : <Navigate to="/" />;
+  // return userInfo ? (
   return (
     <AppBar position="sticky" style={{ background: "#050f24" }}>
       <Container maxWidth="xl">
@@ -224,5 +230,7 @@ const NavBar = () => {
       </Container>
     </AppBar>
   );
+
+  // ) : null;
 };
 export default NavBar;
