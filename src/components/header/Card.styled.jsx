@@ -69,6 +69,7 @@ export const IMGContainer = styled.div`
   width: 10rem;
   height: 10rem;
   margin: auto;
+
   & > img {
     border-radius: 10px;
     overflow: hidden;

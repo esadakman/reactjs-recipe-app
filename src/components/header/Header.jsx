@@ -9,16 +9,16 @@ import {
   Select,
 } from "./Header.styled";
 
-const Header = ({ mealTypes, setQuery, setMeal, getRecipes, query }) => {
+const Header = ({ mealTypes, meal, setQuery, setMeal, getRecipes, query }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // localStorage.clear();
+    // localStorage.setItem("query", JSON.stringify(query));
+    // localStorage.setItem("meal", JSON.stringify(meal));
     getRecipes();
     // setQuery("");
   };
-  // useEffect(() => {
-  //   localStorage.setItem("query", JSON.stringify(query));
-  // }, [query]);
+
   return (
     <Main>
       <H1>Food App</H1>

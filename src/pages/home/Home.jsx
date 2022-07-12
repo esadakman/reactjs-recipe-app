@@ -14,7 +14,9 @@ const Home = () => {
     // ""
     JSON.parse(localStorage.getItem("query")) || ""
   );
-  const [meal, setMeal] = useState(mealTypes[0]);
+  const [meal, setMeal] = useState(
+    JSON.parse(localStorage.getItem("query")) || mealTypes[0]
+  );
   const [cardInfos, setCardInfos] = useState("");
 
   // const [error, setError] = useState(false);
@@ -23,31 +25,22 @@ const Home = () => {
 
   const getRecipes = async () => {
     const { data } = await axios.get(url);
-    // if (!data.ok) {
-    //   setError(true);
-    //   throw new Error("Something went wrong");
-    // }
-    console.log(data.hits);
+    // console.log(data.hits);
     query ? setCardInfos(data.hits) : console.log("fill the area");
   };
-  console.log(query);
   useEffect(() => {
     getRecipes();
-
-    localStorage.setItem("query", JSON.stringify(query));
-    localStorage.setItem("meal", JSON.stringify(meal));
+    // localStorage.setItem("query", JSON.stringify(query));
+    // localStorage.setItem("meal", JSON.stringify(meal));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query]);
-  // useEffect(() => {
-  // localStorage.setItem("query", JSON.stringify(query));
-  // localStorage.setItem("meal", JSON.stringify(meal));
-  // }, [query]);
+  }, []);
 
   return (
     <Section>
       <Header
         query={query}
         mealTypes={mealTypes}
+        meal={meal}
         setQuery={setQuery}
         setMeal={setMeal}
         getRecipes={getRecipes}
