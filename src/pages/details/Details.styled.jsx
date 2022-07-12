@@ -5,7 +5,8 @@ export const DetailsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0;
+  margin-top: 2rem;
+  /* height: 85vh; */
 `;
 
 export const LabelDiv = styled.div`
@@ -23,7 +24,7 @@ export const LabelDiv = styled.div`
 
   & > p {
     width: 38rem;
-    font-size: 1.5rem !important;
+    font-size: 2rem !important;
     @media (max-width: ${({ theme }) => theme.size.md}) {
       width: fit-content;
       min-width: 19rem;
@@ -44,10 +45,9 @@ export const CardDiv = styled.div`
   border-radius: 1rem;
   width: 90vw;
   gap: 1rem;
-  margin: 1rem 0 3rem 0;
-
+  margin: 1rem 0 2rem 0;
   padding: 1rem;
-  background-color: ${({ theme }) => theme.colors.cardText};
+  background-color: #d4f1ff;
   @media (max-width: ${({ theme }) => theme.size.mdl}) {
     flex-direction: column;
     width: fit-content;
@@ -57,10 +57,12 @@ export const CardDiv = styled.div`
 
 export const MealInfo = styled.div`
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
+  justify-content: center;
   gap: 1rem;
   width: 30%;
   min-width: 13rem;
+  height: 100%;
 
   & > p {
     font-size: 1.1rem;
@@ -68,10 +70,17 @@ export const MealInfo = styled.div`
     font-family: "Patrick Hand", cursive;
     line-height: 1.5rem;
     letter-spacing: 0.5px;
+    color: black;
     & > span {
       margin-left: 0.3rem;
-      color: #c44a4a;
+      color: #de3636;
     }
+  }
+  @media (max-width: ${({ theme }) => theme.size.mdl}) {
+    justify-content: center;
+    width: fit-content;
+    border: 1px solid ${({ theme }) => theme.colors.navColor};
+    border-radius: 0.5rem;
   }
 `;
 
@@ -81,11 +90,17 @@ export const IMGDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   & > img {
-    border: 2px solid ${({ theme }) => theme.colors.navColor};
+    /* background-color: ${({ theme }) => theme.colors.turqo}; */
+    border: 1px solid ${({ theme }) => theme.colors.navColor};
     border-radius: 1rem;
     width: 14rem;
     padding: 0.5rem;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+  @media (max-width: ${({ theme }) => theme.size.mdl}) {
+    width: 90%;
   }
 `;
 
@@ -96,16 +111,48 @@ export const MealIngredients = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   gap: 1rem;
-  /* border: 2px red solid; */
-  /* align-items: center; */
   justify-content: center;
-  & > p {
-    /* text-indent: 2rem; */
-    text-align: left;
-    font-size: 1rem;
-    font-family: "Patrick Hand", cursive;
-    & > span {
-      color: #c44a4a;
+  border: 1px solid ${({ theme }) => theme.colors.navColor};
+  border-radius: 0.5rem;
+  /* padding: 0.4rem; */
+  & > div {
+    height: 14rem;
+    overflow: auto;
+    & > p {
+      /* text-indent: 2rem; */
+      /* display: flex; */
+      /* flex-direction: column; */
+      /* align-items: flex-start; */
+      justify-content: flex-start !important;
+      text-align: left;
+      font-size: 1rem;
+      font-family: "Patrick Hand", cursive;
+      & > span {
+        color: #c44a4a;
+      }
     }
+
+    ::-webkit-scrollbar {
+      width: 0.8rem;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: ${({ theme }) => theme.colors.navColor};
+      border-radius: 0.5rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 0.5rem;
+      background: ${({ theme }) => theme.colors.turqo};
+
+      ::-webkit-scrollbar-hover {
+        opacity: 0.5;
+      }
+    }
+  }
+  @media (max-width: ${({ theme }) => theme.size.mdl}) {
+    /* justify-content: center; */
+    /* width: 80%; */
+    width: 80%;
   }
 `;

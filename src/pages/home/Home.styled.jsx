@@ -16,4 +16,12 @@ export const Section = styled.section`
   background-color: #c4d7ed;
 `;
 
+export const LoadingDiv = styled.div`
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+`;
+
 export default CardArea;

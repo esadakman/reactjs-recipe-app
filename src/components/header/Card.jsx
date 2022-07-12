@@ -15,7 +15,6 @@ const Card = ({ recipe }) => {
   const navigate = useNavigate();
 
   return (
-    // <Section>
     <CardContainer
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
@@ -47,7 +46,7 @@ const Card = ({ recipe }) => {
           <ButtonStyleCard
             onClick={
               // () => navigate(`/details/${recipe.label}`, { state: recipe })
-              () => navigate(`/details`, { state: recipe })
+              () => navigate(`/details/recipe`, { state: recipe })
             }
           >
             View More
@@ -55,7 +54,6 @@ const Card = ({ recipe }) => {
         </CardBack>
       </CardInner>
     </CardContainer>
-    // </Section>
   );
 };
 

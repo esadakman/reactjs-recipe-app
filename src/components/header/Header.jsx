@@ -1,5 +1,3 @@
-// import React, { useState } from "react";
-// import { useEffect } from "react";
 import {
   ButtonStyle,
   FormContainer,
@@ -9,13 +7,28 @@ import {
   Select,
 } from "./Header.styled";
 
-const Header = ({ mealTypes, meal, setQuery, setMeal, getRecipes, query }) => {
+const Header = ({
+  mealTypes,
+  meal,
+  setQuery,
+  setMeal,
+  getRecipes,
+  query,
+  setGif,
+}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
+    getRecipes();
+    setQuery("");
+
+    setGif(true);
+    setTimeout(() => {
+      setGif(false);
+    }, 2000);
     // localStorage.clear();
     // localStorage.setItem("query", JSON.stringify(query));
     // localStorage.setItem("meal", JSON.stringify(meal));
-    getRecipes();
+    // getRecipes();
     // setQuery("");
   };
 

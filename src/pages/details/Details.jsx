@@ -10,6 +10,7 @@ import {
 import diet from "../../assets/diet.svg";
 import { AboutTitle } from "../about/About.styled";
 import { IMGContainer } from "../../components/header/Card.styled";
+import { ButtonStyle } from "../../components/header/Header.styled";
 
 const Details = () => {
   const recipe = useLocation();
@@ -22,7 +23,6 @@ const Details = () => {
   } = recipe.state;
   console.log(ingredientLines);
   return (
-    // {recipe?}
     <DetailsContainer>
       <LabelDiv>
         <AboutTitle>{label}</AboutTitle>
@@ -85,15 +85,20 @@ const Details = () => {
           <img src={image} alt={label} />
         </IMGDiv>
         <MealIngredients>
-          {ingredientLines.map((ingr, index) => {
-            return (
-              <p key={index}>
-                <span> {index + 1}</span> : {ingr}
-              </p>
-            );
-          })}
+          <div>
+            {ingredientLines.map((ingr, index) => {
+              return (
+                // <div }>
+                <p key={index}>
+                  <span> {index + 1}</span> : {ingr}
+                </p>
+                // </div>
+              );
+            })}
+          </div>
         </MealIngredients>
       </CardDiv>
+      <ButtonStyle style={{ marginBottom: "5rem" }}>Go Back</ButtonStyle>
     </DetailsContainer>
   );
 };
