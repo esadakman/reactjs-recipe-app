@@ -19,7 +19,6 @@ const Header = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     getRecipes();
-    // console.log(getRecipes());
     setQuery("");
     setGif(true);
     setTimeout(() => {
