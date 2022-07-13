@@ -5,6 +5,7 @@ import Card from "../../components/header/Card";
 import CardArea, { LoadingDiv, Section } from "./Home.styled";
 // import NotFound from "../notfound/NotFound";
 import loading from "../../assets/loading.svg";
+import { AboutTitle } from "../about/About.styled";
 const APP_ID = "dec1c9ef";
 const APP_KEY = "8973ca575935d18beea52f4ab0a61a59";
 
@@ -28,12 +29,11 @@ const Home = () => {
   const getRecipes = async () => {
     const { data } = await axios.get(url);
     // console.log(data.hits);
-    query ? setCardInfos(data.hits) : console.log("fill the area");
+    query ? setCardInfos(data.hits) : console.log("search something");
   };
+
   useEffect(() => {
     getRecipes();
-    // localStorage.setItem("query", JSON.stringify(query));
-    // localStorage.setItem("meal", JSON.stringify(meal));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -49,7 +49,6 @@ const Home = () => {
         setGif={setGif}
       ></Header>
       {!gif ? (
-        // <>
         <CardArea>
           {cardInfos ? (
             cardInfos.map((liste) => (
@@ -58,9 +57,8 @@ const Home = () => {
               </Card>
             ))
           ) : (
-            <p>Search Something</p>
+            <AboutTitle>Start Searching</AboutTitle>
           )}
-          {/* </> */}
         </CardArea>
       ) : (
         <LoadingDiv>

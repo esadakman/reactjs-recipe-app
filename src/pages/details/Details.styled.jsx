@@ -124,10 +124,7 @@ export const MealIngredients = styled.div`
     height: 14rem;
     overflow: auto;
     & > p {
-      /* text-indent: 2rem; */
-      /* display: flex; */
-      /* flex-direction: column; */
-      /* align-items: flex-start; */
+      text-indent: 5px;
       justify-content: flex-start !important;
       text-align: left;
       font-size: 1rem;

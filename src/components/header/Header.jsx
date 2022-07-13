@@ -19,17 +19,12 @@ const Header = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     getRecipes();
+    // console.log(getRecipes());
     setQuery("");
-
     setGif(true);
     setTimeout(() => {
       setGif(false);
-    }, 2000);
-    // localStorage.clear();
-    // localStorage.setItem("query", JSON.stringify(query));
-    // localStorage.setItem("meal", JSON.stringify(meal));
-    // getRecipes();
-    // setQuery("");
+    }, 1500);
   };
 
   return (

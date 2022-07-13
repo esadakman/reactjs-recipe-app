@@ -19,10 +19,13 @@ const Login = () => {
     username: `${username}`,
     password: `${password}`,
   };
+  // localStorage.setItem("navbar", false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sessionStorage.setItem("userInfo", JSON.stringify(userInfo));
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    // localStorage.setItem("navbar", true);
+
     Navigate("/home");
   };
   return (
