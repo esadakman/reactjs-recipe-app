@@ -25,11 +25,17 @@ const Home = () => {
 
   const url = `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_API_ID}&app_key=${process.env.REACT_APP_API_KEY}&mealType=${meal}`;
 
+  // let info = "Start Searching";
   const getRecipes = async () => {
     const { data } = await axios.get(url);
-    // console.log(data.hits);
     query ? setCardInfos(data.hits) : console.log("search something");
+    // try {
+    //   setCardInfos(data.hits);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
+  // console.log(info);
   useEffect(() => {
     getRecipes();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -50,6 +56,7 @@ const Home = () => {
         <CardArea>
           {cardInfos ? (
             cardInfos.map((liste) => (
+              // ! index yerine caloriyi key verdim
               <Card key={liste.recipe.calories} recipe={liste.recipe}>
                 {" "}
               </Card>
