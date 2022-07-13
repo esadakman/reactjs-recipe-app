@@ -11,11 +11,7 @@ const Footer = () => {
         <p>&#169; 2022. All rights reserved.</p>
       </TextStyle>
       <Logos>
-        <a
-          href="https://www.twitter.com/esadakman/"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://www.twitter.com/" target="_blank" rel="noreferrer">
           <TwitterIcon />
         </a>
         <a href="https://github.com/esadakman" target="_blank" rel="noreferrer">
