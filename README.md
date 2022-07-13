@@ -9,11 +9,10 @@ Build a Task Tracker App using ReactJS.
 - Project aims to create a Recipe App.
 - In this project i tried to make a recipe app. After submitting username and password info's user can search food's recipe by their name and type.
 - When user click the "view more" buttton in the cards div, can see the recipe and other informations about selected food.
--
 
 ## Project Link
 
-[Recipe App](https://recipe-app-router.vercel.app/)
+#### You can reach my project from [here](https://recipe-app-router.vercel.app/) 👈
 
 ## Project Skeleton
 
