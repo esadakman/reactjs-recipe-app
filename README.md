@@ -1,8 +1,19 @@
 # Recipe App
 
+## Objective
+
+Build a Task Tracker App using ReactJS.
+
 ## Description
 
-Project aims to create a Recipe App.
+- Project aims to create a Recipe App.
+- In this project i tried to make a recipe app. After submitting username and password info's user can search food's recipe by their name and type.
+- When user click the "view more" buttton in the cards div, can see the recipe and other informations about selected food.
+-
+
+## Project Link
+
+[Recipe App](https://recipe-app-router.vercel.app/)
 
 ## Project Skeleton
 
@@ -10,34 +21,40 @@ Project aims to create a Recipe App.
 Recipe App (folder)
 |
 |----readme.md
-SOLUTION
 ├── public
 │     └── index.html
 ├── src
 │    ├── components
+│    │       ├── footer
+│    │       │     ├── Footer.jsx
+│    │       |     ├── Footer.styled.jsx
 │    │       ├── header
-│    │       │     ├── Header.js
-│    │       │     ├── Form.js
-│    │       │     └── style.js
+│    │       │     ├── Header.jsx
+│    │       │     ├── Card.jsx
+│    │       │     └── Header.styled.jsx
+│    │       │     └── Card.styled.jsx
 │    │       └── navbar
 │    │             ├── Navbar.js
-│    │             └── style.js
+│    │             └── Navbar.styled.jsx
 │    ├── pages
 │    │       ├── about
 │    │       │     ├── About.js
-│    │       │     └── style.js
+│    │       │     ├── About.styled.jsx
 │    │       ├── details
 │    │       │     ├── Details.js
-│    │       │     └── style.js
+│    │       │     ├── Details.styled.jsx
 │    │       ├── login
 │    │       │     ├── Login.js
-│    │       │     └── style.js
-│    │       └── home
-│    │             ├── Home.js
-│    │             ├── RecipeCard.js
-│    │             └── style.js
+│    │       │     ├── Login.styled.jsx
+│    │       ├── home
+│    │       │     ├── home.js
+│    │       │     ├── home.styled.jsx
+│    │       └── notfound
+│    │             ├── notfound.js
+│    │             └── notfound.styled.jsx
 │    ├── router
 │    │       └── AppRouter.js
+│    │       └── PrivateRouter.js
 │    ├── assets
 │    │       └── [images]
 │    ├── App.js
@@ -48,36 +65,30 @@ SOLUTION
 └── yarn.lock
 ```
 
-## Objective
-
-Build a Recipe App using ReactJS.
-
 ### At the end of the project, following topics are to be covered;
 
 - HTML
-
 - CSS
-
 - JS
-
 - ReactJS
+- Styled Components
+- Material-UI
 
-### At the end of the project, students will be able to;
+### Installation
 
-- improve coding skills within HTML & CSS & JS & ReactJS.
+To run this project;
 
-- use git commands (push, pull, commit, add etc.) and Github as Version Control System.
+- Signup `https://developer.edamam.com/edamam-docs-recipe-api` and get api key and id.
+- Create a .env file and set your REACT_APP_API_KEY and REACT_APP_API_ID:
+- After these you can run the project as usual =>
 
-## Steps to Solution
+```
+$ git clone https://github.com/esadakman/recipe-app
+$ cd ../recipe-app
+$ npm install / yarn
+$ npm start / yarn start
+```
 
-- Step 1: Create React App using `npx create-react-app recipe-app`
+### Preview of the Project
 
-- Step 2: Signup `https://developer.edamam.com/edamam-docs-recipe-api` and get api key.
-
-- Step 3 : Using api key and `axios` for getting data from `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`.
-
-- Step 4: You can use css frameworks like Bootstrap, Semantic UI.
-
-- Step 5 : You can get random login background image from `https://picsum.photos/1600/900`
-
-- Step 6: Add project gif to your project and README.md file.
+![recipe](https://user-images.githubusercontent.com/98649983/178786899-5a3123cb-845d-432e-8374-fe3ea5b29ccd.gif)
