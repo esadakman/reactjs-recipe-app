@@ -4,10 +4,10 @@ import {
   LoginStyled,
   FormContainer,
   Header,
-  StyledButton,
-  StyledForm,
-  StyledImg,
-  StyledInput,
+  InputStyled,
+  FormStyled,
+  IMGStyled,
+  ButtonStyled,
 } from "./Login.styled";
 import meal2 from "../../assets/meal2.svg";
 
@@ -31,10 +31,10 @@ const Login = () => {
   return (
     <LoginStyled>
       <FormContainer>
-        <StyledImg src={meal2} />
+        <IMGStyled src={meal2} />
         <Header>{`<esad/>`}Recipe</Header>
-        <StyledForm onSubmit={handleSubmit}>
-          <StyledInput
+        <FormStyled onSubmit={handleSubmit}>
+          <InputStyled
             type="text"
             placeholder="Username"
             name="username"
@@ -42,15 +42,15 @@ const Login = () => {
             onChange={(e) => setUsername(e.target.value)}
             required
           />
-          <StyledInput
+          <InputStyled
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <StyledButton type="submit">Login</StyledButton>
-        </StyledForm>
+          <ButtonStyled type="submit">Login</ButtonStyled>
+        </FormStyled>
       </FormContainer>
     </LoginStyled>
   );

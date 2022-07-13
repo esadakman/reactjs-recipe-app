@@ -25,7 +25,7 @@ const Card = ({ recipe }) => {
             <h2 title={recipe.label}>{recipe.label}</h2>
           </TextDiv>
           <IMGContainer>
-            <img src={recipe.image} alt="food images" />
+            <img src={recipe.image} alt={recipe.label} />
           </IMGContainer>
         </CardFront>
         <CardBack>
@@ -46,7 +46,7 @@ const Card = ({ recipe }) => {
           <ButtonStyleCard
             onClick={
               // () => navigate(`/details/${recipe.label}`, { state: recipe })
-              () => navigate(`/details/recipe`, { state: recipe })
+              () => navigate(`/details/${recipe.label}`, { state: recipe })
             }
           >
             View More

@@ -36,7 +36,7 @@ export const Header = styled.h1`
   font-size: 2rem;
 `;
 
-export const StyledInput = styled.input`
+export const InputStyled = styled.input`
   border-radius: 0.3rem;
   background-color: #050f24af;
   color: #f8f8f8;
@@ -56,13 +56,13 @@ export const StyledInput = styled.input`
   }
 `;
 
-export const StyledForm = styled.form`
+export const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 `;
 
-export const StyledButton = styled.button`
+export const ButtonStyled = styled.button`
   margin: 0.5 rem;
   border-radius: 2rem;
   border: none;
@@ -82,7 +82,7 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const StyledImg = styled.img`
+export const IMGStyled = styled.img`
   width: 8rem;
   /* margin: 1rem; */
 `;

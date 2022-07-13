@@ -31,7 +31,6 @@ const Home = () => {
     // console.log(data.hits);
     query ? setCardInfos(data.hits) : console.log("search something");
   };
-
   useEffect(() => {
     getRecipes();
     // eslint-disable-next-line react-hooks/exhaustive-deps
