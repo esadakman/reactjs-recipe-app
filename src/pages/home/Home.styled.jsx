@@ -24,4 +24,19 @@ export const LoadingDiv = styled.div`
   align-content: center;
 `;
 
+export const ImgContainer = styled.div`
+  margin: 2rem;
+  img {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const HomeImg = styled.img`
+  width: 30rem;
+  /* max-width: 750px; */
+`;
+
 export default CardArea;

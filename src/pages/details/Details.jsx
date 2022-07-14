@@ -11,7 +11,7 @@ import diet from "../../assets/diet.svg";
 import { AboutTitle } from "../about/About.styled";
 import { IMGContainer } from "../../components/header/Card.styled";
 import { ButtonStyle } from "../../components/header/Header.styled";
-
+import defaultImage from "../../assets/default-image.jpg";
 const Details = () => {
   const recipe = useLocation();
   const {
@@ -83,7 +83,7 @@ const Details = () => {
           </p>
         </MealInfo>
         <IMGDiv>
-          <img src={image} alt={label} />
+          <img src={image || defaultImage} alt={label} />
         </IMGDiv>
         <MealIngredients>
           <div>
