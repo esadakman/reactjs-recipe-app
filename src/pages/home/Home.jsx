@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Header from "../../components/header/Header";
 import Card from "../../components/header/Card";
@@ -17,7 +17,7 @@ const Home = () => {
     // JSON.parse(localStorage.getItem("query")) ||
     mealTypes[0]
   );
-  const [cardInfos, setCardInfos] = useState("");
+  const [cardInfos, setCardInfos] = useState(null);
   const [gif, setGif] = useState(false);
 
   // const [error, setError] = useState(false);
@@ -27,19 +27,17 @@ const Home = () => {
 
   // let info = "Start Searching";
   const getRecipes = async () => {
-    const { data } = await axios.get(url);
-    query ? setCardInfos(data.hits) : console.log("search something");
-    // try {
-    //   setCardInfos(data.hits);
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    if (query) {
+      try {
+        const { data } = await axios.get(url);
+        setCardInfos(data.hits);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      alert("Please Enter your meal");
+    }
   };
-  // console.log(info);
-  useEffect(() => {
-    getRecipes();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <Section>
@@ -54,16 +52,19 @@ const Home = () => {
       ></Header>
       {!gif ? (
         <CardArea>
-          {cardInfos ? (
+          {!cardInfos && <AboutTitle>Start Searching</AboutTitle>}
+
+          {cardInfos?.length === 0 && (
+            <AboutTitle>The Food can not be found</AboutTitle>
+          )}
+
+          {cardInfos?.length > 0 &&
             cardInfos.map((liste) => (
               // ! index yerine caloriyi key verdim
               <Card key={liste.recipe.calories} recipe={liste.recipe}>
                 {" "}
               </Card>
-            ))
-          ) : (
-            <AboutTitle>Start Searching</AboutTitle>
-          )}
+            ))}
         </CardArea>
       ) : (
         <LoadingDiv>
