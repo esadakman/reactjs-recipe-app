@@ -20,7 +20,7 @@ const Login = () => {
     password: `${password}`,
   };
   // localStorage.setItem("navbar", false);
-
+  // console.log(userInfo);
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
