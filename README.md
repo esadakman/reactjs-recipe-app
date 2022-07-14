@@ -2,7 +2,7 @@
 
 ## Objective
 
-Build a Task Tracker App using ReactJS.
+- Build a Task Tracker App using ReactJS.
 
 ## Description
 
