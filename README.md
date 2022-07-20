@@ -2,7 +2,7 @@
 
 ## Objective
 
-- Build a Task Tracker App using ReactJS.
+- Build a Recipe App using ReactJS.
 
 ## Description
 
