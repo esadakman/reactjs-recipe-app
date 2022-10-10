@@ -82,8 +82,8 @@ To run this project;
 - After these you can run the project as usual =>
 
 ```
-$ git clone https://github.com/esadakman/recipe-app
-$ cd ../recipe-app
+$ git clone https://github.com/esadakman/reactjs-recipe-app.git
+$ cd ./recipe-app
 $ npm install / yarn
 $ npm start / yarn start
 ```
