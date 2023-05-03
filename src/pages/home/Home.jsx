@@ -32,15 +32,11 @@ const Home = () => {
 
   // let info = "Start Searching";
   const getRecipes = async () => {
-    if (query) {
-      try {
-        const { data } = await axios.get(url);
-        setCardInfos(data.hits);
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      alert("Please Enter your meal");
+    try {
+      const { data } = await axios.get(url);
+      setCardInfos(data.hits);
+    } catch (error) {
+      console.log(error);
     }
   };
 

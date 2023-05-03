@@ -18,14 +18,17 @@ const Header = ({
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    getRecipes();
-    setQuery("");
-    setGif(true);
-    setTimeout(() => {
-      setGif(false);
-    }, 1500);
+    if (query !== "") {
+      getRecipes();
+      setQuery("");
+      setGif(true);
+      setTimeout(() => {
+        setGif(false);
+      }, 1500);
+    } else {
+      alert("Please Enter your meal");
+    }
   };
-
   return (
     <Main>
       <H1>Food App</H1>
